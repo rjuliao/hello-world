@@ -1,31 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          <p>This a Reminder</p>
-        </a>
-      </header>
-      <body>
-        <p>Cunt to the femeine</p>
-        <Button/>
-      </body>
-    </div>
-  );
+
+    const [counter, setCounter] = useState(0)
+    const [decrement, setDecrement]  = useState(0)
+    const [disabled, setDisabled] = useState(true)
+
+    function handleLike(){
+        setCounter(counter + 1)
+    }
+
+    function handleUnlike(){
+      if(counter === 0){
+        setDisabled(false)
+      }else{
+        setDecrement(decrement - 1)
+      }
+    }
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>Increment button</h1>
+          <br/>
+          <Button  counter={counter} onClick={handleLike}/>
+
+          <Button isDisabled={disabled} counter={decrement} onClick={handleUnlike}/>
+        </header>
+      </div>
+    );
 }
 
 export default App;
