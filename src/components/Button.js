@@ -1,8 +1,11 @@
 
-export default function Button(){
+export default function Button({isDisabled, counter, onClick}){
+
     return(
         <>
-            <button>Hello</button>
+            <button disabled={isDisabled} onClick={onClick}>
+                Like {counter}
+            </button>
         </>
     )
 }
