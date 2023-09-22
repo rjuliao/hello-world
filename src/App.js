@@ -1,4 +1,5 @@
 import './App.css';
+import AppBarMenu from './components/AppBarMenu';
 import LikeBox from './components/LikeBox';
 
 function App() {
@@ -6,12 +7,16 @@ function App() {
     
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Increment button</h1>
+      <>
+        <div>
+          <AppBarMenu/>
+        </div>
+        <body className='Body-Item'>
+          <div>
             <LikeBox/>
-        </header>
-      </div>
+          </div>
+        </body>
+      </>
     );
 }
 
