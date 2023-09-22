@@ -26,11 +26,15 @@ function LikeBox(){
 
     return(
         <>
-            <Box  display='flex' justifyContent="center" alignItems="center" sx={{
+            <Box  
+                display='flex' 
+                justifyContent="center" 
+                alignItems="center" 
+                sx={{
                     width: 400,
                     height: 200,
                     bgcolor: 'secondary.main'
-                    }}
+                }}
             >
                 <Grid container spacing={2} columns={16}>
                     <Grid item xs={8}>
