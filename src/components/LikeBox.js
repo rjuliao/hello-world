@@ -38,10 +38,10 @@ function LikeBox(){
             >
                 <Grid container spacing={2} columns={16}>
                     <Grid item xs={8}>
-                        <ButtonUi innerText={'Like'} counter={counter} onClick={handleLike}/>
+                        <ButtonUi innerText={'Like'} color={'success'} counter={counter} onClick={handleLike}/>
                     </Grid>
                     <Grid item xs={8}>
-                        <ButtonUi innerText={'Dislike'}isDisabled={disabled} counter={decrement} onClick={handleUnlike}/>
+                        <ButtonUi innerText={'Dislike'}isDisabled={disabled} color={'error'} counter={decrement} onClick={handleUnlike}/>
                     </Grid>
                 </Grid>
             </Box>
