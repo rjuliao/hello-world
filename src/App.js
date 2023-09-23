@@ -1,21 +1,11 @@
-import './App.css';
-import AppBarMenu from './components/AppBarMenu';
-import LikeBox from './components/LikeBox';
+
+import Home from './views/Home';
 
 function App() {
 
-    
-
     return (
       <>
-        <div>
-          <AppBarMenu/>
-        </div>
-        <body className='Body-Item'>
-          <div>
-            <LikeBox/>
-          </div>
-        </body>
+        <Home/>
       </>
     );
 }
