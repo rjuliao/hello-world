@@ -1,9 +1,8 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 
-function AppBarMenu() {
+function AppBarMenu({onReset}) {
     
-
     return(
         <Box sx={{flexGrow: 1}}>
             <AppBar position="static">
@@ -20,7 +19,7 @@ function AppBarMenu() {
                     <Typography variant="h6" component='div' sx={{ flexGrow: 1}}>
                         News
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit" onClick={onReset}>Reset</Button>
                 </Toolbar>
             </AppBar>
         </Box>
