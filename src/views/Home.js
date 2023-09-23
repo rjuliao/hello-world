@@ -1,9 +1,11 @@
 import '../css/App.css'
 import AppBarMenu from "../components/AppBarMenu";
 import LikeBox from "../components/LikeBox";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 function Home() {
+    const theme = useContext(ThemeContext)
     const [counter, setCounter] = useState(0);
     const [decrement, setDecrement] = useState(0);
     const [disabled, setDisabled] = useState(true)
