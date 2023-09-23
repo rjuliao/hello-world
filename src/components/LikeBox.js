@@ -1,9 +1,10 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import ButtonUi from './ButtonUi';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 function LikeBox(props){
-    
+    const theme = useContext(ThemeContext)
     return(
         <>
             <Box  
@@ -11,12 +12,18 @@ function LikeBox(props){
                 justifyContent="center" 
                 alignItems="center" 
                 sx={{
-                    width: 400,
-                    height: 200,
-                    bgcolor: 'secondary.main'
+                    height: 300,
+                    bgcolor: theme.palette.secondary.secondary
                 }}
             >
                 <Grid container spacing={2} columns={16}>
+                    <Grid item display='flex' justifyContent='center' xs={16}>
+                        <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
+                            <Typography variant='h1'>Name: {props.title}</Typography>
+                            <Typography variant='h2'>Author: {props.author}</Typography>
+                        </Box>
+                        
+                    </Grid>
                     <Grid item display='flex' justifyContent='center' xs={8}>
                         <ButtonUi 
                             innerText={'Like'} 

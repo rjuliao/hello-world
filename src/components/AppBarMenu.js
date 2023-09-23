@@ -1,7 +1,10 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
 
 function AppBarMenu({onReset}) {
+    const theme = useContext(ThemeContext)
     
     return(
         <Box sx={{flexGrow: 1}}>
@@ -10,7 +13,7 @@ function AppBarMenu({onReset}) {
                     <IconButton
                         size="large"
                         edge="start"
-                        color="inherit"
+                        color={theme.palette.primary.main}
                         aria-label="menu"
                         sx={{ mr: 2 }}
                     >
