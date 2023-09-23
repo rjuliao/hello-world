@@ -2,28 +2,8 @@ import { Box, Grid } from '@mui/material';
 import ButtonUi from './ButtonUi';
 import { useState } from 'react';
 
-function LikeBox(){
-    const [counter, setCounter] =  useState(0)
-    const [decrement, setDecrement]  = useState(0)
-    const [disabled, setDisabled] = useState(true)
-
-    function handleLike(){
-        console.log('like')
-        setCounter(counter + 1)
-        setDisabled(false)
-    }
-
-    function handleUnlike(){
-      if(counter === 0){
-        setDisabled(true)
-        setDecrement(0)
-        console.log('no more likes')
-      }else{
-        setCounter(counter -1)
-        setDecrement(decrement + 1)
-      }
-    }
-
+function LikeBox(props){
+    
     return(
         <>
             <Box  
@@ -37,11 +17,22 @@ function LikeBox(){
                 }}
             >
                 <Grid container spacing={2} columns={16}>
-                    <Grid item xs={8}>
-                        <ButtonUi innerText={'Like'} color={'success'} counter={counter} onClick={handleLike}/>
+                    <Grid item display='flex' justifyContent='center' xs={8}>
+                        <ButtonUi 
+                            innerText={'Like'} 
+                            color={'success'} 
+                            counter={props.cCounter} 
+                            onClick={props.onLike}
+                        />
                     </Grid>
-                    <Grid item xs={8}>
-                        <ButtonUi innerText={'Dislike'}isDisabled={disabled} color={'error'} counter={decrement} onClick={handleUnlike}/>
+                    <Grid item display='flex' justifyContent='center' xs={8}>
+                        <ButtonUi 
+                            innerText={'Dislike'} 
+                            isDisabled={props.cDisable} 
+                            color={'error'} 
+                            counter={props.cDecrement} 
+                            onClick={props.onDislike}
+                        />
                     </Grid>
                 </Grid>
             </Box>
